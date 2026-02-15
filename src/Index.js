@@ -25,7 +25,6 @@ app.get("/employees", (req, res) => {
   db.query("SELECT * FROM employees", (err, result) => {
     if (err) {
       console.error("DB Error:", err);
-      return res.status(500).json({ error: err.message });
     }
     res.json(result);
   });
